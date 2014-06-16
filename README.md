@@ -114,10 +114,10 @@ try {
 
 // $messages would contain:
 [
-  "user": [
+  "user" => [
     "TooShort" => "String 'a' is shorter than the minimum of 2"
   ],
-  "email": [
+  "email" => [
     "TooShort" => "String 'e.com' is shorter than the minimum of 10",
     "BadFormat" => "'e.com' is not a valid email address"
   ]
@@ -134,12 +134,12 @@ JsonFormatter
 
 ```json
 [
-  'name' => [
-    'TooShort' => "String '2' is shorter than the minimum of 2",
-    'BadFormat' => "Your username should at least have one letter"
+  "name": [
+    "TooShort": "String '2' is shorter than the minimum of 2",
+    "BadFormat": "Your username should at least have one letter"
   ],
-  'password' => [
-    'Null' => "A password must be provided"
+  "password": [
+    "Null": "A password must be provided"
   ]
 ]
 
