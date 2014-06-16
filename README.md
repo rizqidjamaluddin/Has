@@ -114,12 +114,12 @@ try {
 
 // $messages would contain:
 [
-  'user' => [
-    'TooShort' => "String 'a' is shorter than the minimum of 2"
+  "user": [
+    "TooShort" => "String 'a' is shorter than the minimum of 2"
   ],
-  'email' => [
-    'TooShort' => "String 'e.com' is shorter than the minimum of 10",
-    'BadFormat' => "'e.com' is not a valid email address"
+  "email": [
+    "TooShort" => "String 'e.com' is shorter than the minimum of 10",
+    "BadFormat" => "'e.com' is not a valid email address"
   ]
 ]
 
