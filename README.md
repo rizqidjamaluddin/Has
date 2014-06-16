@@ -59,21 +59,17 @@ Sometimes we'll want to do different things when certain errors are found in the
 ```php
 $usernameValidator = Has::alphanumeric()->over(5)->under(20)->allow([' ']); // alphanumeric plus spaces
 
+$usernameValidator->pushHandler('range', function(RangeException $e){
+  log_that_someone_tried_inserting_too_long_or_short_a_username();
+});
+
+$usernameValidator->pushHandler('whitelist', function(WhitelistException $e){
+  log_someone_tried_a_username_thats_not_alphanumeric_with_spaces_those_monsters();
+});
+
 try {
   $usernameValidator->check("J-D"); // fails because it's too short and has a dash
 } catch (ValidationException $e) {
-  try {
-    $e->rethrow('whitelist'); // alphanumeric and allow rules are called "whitelist" rules
-  } catch (WhitelistException $e) {
-    // do stuff
-  }
-  
-  try {
-    $e->rethrow('range');
-  } catch (RangeException $e) {
-    // do stuff
-  }
-  
   echo $e->getMessages();
 }
 ```
