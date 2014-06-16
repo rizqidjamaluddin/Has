@@ -133,15 +133,15 @@ Where `$e->getMessages()`  returns a flat array, Has provides a number of format
 JsonFormatter
 
 ```json
-[
-  "name": [
+{
+  "name": {
     "TooShort": "String '2' is shorter than the minimum of 2",
     "BadFormat": "Your username should at least have one letter"
-  ],
-  "password": [
+  },
+  "password": {
     "Null": "A password must be provided"
-  ]
-]
+  }
+}
 
 ```
 
